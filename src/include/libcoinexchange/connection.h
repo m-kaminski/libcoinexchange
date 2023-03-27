@@ -6,8 +6,8 @@
 namespace coin {
 
     struct ticker {
-        double ask;
-        double bid;
+        std::string ask;
+        std::string bid;
         double volume;
         int32_t trade_id;
         double price;

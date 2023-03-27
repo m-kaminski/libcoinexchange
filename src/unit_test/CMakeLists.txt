@@ -1,3 +1,3 @@
 add_executable(connect_exchange_test connect_exchange_test.cpp)
-target_link_libraries(connect_exchange_test GTest::gtest_main gcov libcoinexchange cpr::cpr)
+target_link_libraries(connect_exchange_test GTest::gtest_main gcov libcoinexchange cpr::cpr nlohmann_json::nlohmann_json)
 gtest_discover_tests(connect_exchange_test)
