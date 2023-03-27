@@ -19,7 +19,7 @@ namespace coin {
         public:
         bool initialized();
         std::vector<std::string> get_product();
-
+        ticker get_quote(const std::string & prod);
 
     };
 }

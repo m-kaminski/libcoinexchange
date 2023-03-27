@@ -66,3 +66,19 @@ gtest
 boost beast
 cmake
 g++
+openssl openssl-devel
+libcurl libcurl-devel
+cpr
+
+
+
+installing cpr:
+
+```
+$ git clone https://github.com/whoshuu/cpr.git
+$ cd cpr
+$ mkdir build && cd build
+$ cmake ..
+$ make
+$ make install
+```

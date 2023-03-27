@@ -3,11 +3,12 @@
 #include <iterator>
 
 int main() {
-    auto connected = coin::connect_exchange();
-    if (connected->initialized()) {
+    auto conn = coin::connect_exchange();
+    if (conn->initialized()) {
         std::cout << "Hello exchange\ntrading pairs:" << std::endl;
-        auto p = connected->get_product();
+        auto p = conn->get_product();
         std::copy(p.begin(), p.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
+        conn->get_quote("BTC-USD");
     }
 
     return 0;   
