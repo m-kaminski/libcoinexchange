@@ -1,9 +1,9 @@
-#include "libcoinexchange/connect_exchange.h"
+#include "libcoinexchange/connection_factory.h"
 #include <iostream>
 #include <iterator>
 
 int main() {
-    auto conn = coin::connect_exchange();
+    auto conn = coin::connection_factory::connect_exchange();
     if (conn->initialized()) {
         std::cout << "Hello exchange\ntrading pairs:" << std::endl;
         auto p = conn->get_product();
