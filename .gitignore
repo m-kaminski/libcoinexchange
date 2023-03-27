@@ -2,3 +2,5 @@
 build
 *~
 sample*
+apikey
+.json

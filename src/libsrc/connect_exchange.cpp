@@ -3,6 +3,7 @@
 
 namespace coin {
     bool connect_exchange() {
+
         return true;
     }
 }

@@ -2,6 +2,8 @@
 #define _LINBCOINEXCHANGE_CONNECT_EXCHANGE_H
 
 namespace coin {
+    
+
     bool connect_exchange();
 }
 
