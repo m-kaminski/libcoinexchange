@@ -1,0 +1,1 @@
+add_library (libcoinexchange SHARED connect_exchange.cpp)
