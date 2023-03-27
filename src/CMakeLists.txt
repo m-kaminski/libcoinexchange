@@ -15,5 +15,5 @@ enable_testing()
 include(GoogleTest)
 include_directories(include/)
 add_subdirectory(libsrc)
-
 add_subdirectory(unit_test)
+add_subdirectory(example)
