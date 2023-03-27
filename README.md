@@ -68,17 +68,9 @@ cmake
 g++
 openssl openssl-devel
 libcurl libcurl-devel
-cpr
 
 
+Repos used:
+1. https://github.com/nlohmann/json
+2. https://github.com/libcpr/cpr
 
-installing cpr:
-
-```
-$ git clone https://github.com/whoshuu/cpr.git
-$ cd cpr
-$ mkdir build && cd build
-$ cmake ..
-$ make
-$ make install
-```

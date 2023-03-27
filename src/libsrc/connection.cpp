@@ -11,7 +11,6 @@ namespace coin
     }
 
     ticker connection::get_quote(const std::string &prod)
-
     {
         cpr::Response r = cpr::Get(cpr::Url{std::string("https://api.exchange.coinbase.com/products/")+prod+"/ticker"});
         
@@ -24,23 +23,6 @@ namespace coin
        // string xx = j["token"];
         t.ask = j["ask"];
         t.bid = j["bid"];
-        
-/*
-        std::string ask;
-        std::string bid;
-        std::string volume;
-        int32_t trade_id;
-        std::string price;
-        std::string size;
-        std::string time;
-    "ask": "27856.83",
-    "bid": "27853.76",
-    "volume": "10215.70314036",
-    "trade_id": 514598501,
-    "price": "27856.83",
-    "size": "0.00535919",
-    "time": "2023-03-27T02:33:01.821466Z"
-}        */
         return t;
     }
     std::vector<std::string> connection::get_product()
