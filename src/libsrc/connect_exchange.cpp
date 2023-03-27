@@ -2,8 +2,8 @@
 
 
 namespace coin {
-    bool connect_exchange() {
+    std::unique_ptr<connection> connect_exchange() {
 
-        return true;
+        return std::unique_ptr<connection>(new connection());
     }
 }

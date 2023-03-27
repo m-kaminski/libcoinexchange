@@ -1,1 +1,1 @@
-add_library (libcoinexchange SHARED connect_exchange.cpp)
+add_library (libcoinexchange SHARED connect_exchange.cpp connection.cpp)

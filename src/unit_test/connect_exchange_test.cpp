@@ -11,7 +11,15 @@ namespace coin
 
     TEST_F(connect_exchange_test, connect_exchange)
     {
-        EXPECT_TRUE(connect_exchange());
+        EXPECT_TRUE(connect_exchange()->initialized());
+    }
+    
+
+    TEST_F(connect_exchange_test, connected_pairs)
+    {
+        auto conn = connect_exchange();
+        EXPECT_EQ(conn->get_product().size(),1);
+        EXPECT_EQ(conn->get_product()[0], "BTC-USD");
     }
     
 }

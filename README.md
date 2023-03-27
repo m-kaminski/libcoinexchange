@@ -6,6 +6,8 @@ Following APIs are handled
 
 https://docs.cloud.coinbase.com/advanced-trade-api/docs/rest-api-overview
 
+https://docs.cloud.coinbase.com/exchange/reference/
+
 https://docs.cloud.coinbase.com/advanced-trade-api/docs/ws-overview
 
 
@@ -56,3 +58,11 @@ curl -L -X GET 'https://api.exchange.coinbase.com/products/BTC-USD/ticker' -H 'C
     "time": "2023-03-27T02:33:01.821466Z"
 }
 ```
+
+
+Reqs
+
+gtest
+boost beast
+cmake
+g++
