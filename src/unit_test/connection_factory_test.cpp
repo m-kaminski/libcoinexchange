@@ -41,6 +41,7 @@ namespace coin
         ticker q = conn->get_quote("BTC-USD");
         EXPECT_EQ(q.bid, 213800);
         EXPECT_EQ(q.ask, 213700);
+        EXPECT_EQ(q.price, 278776600);
     }
 
     TEST_F(connect_exchange_test, parse_json_time)
@@ -51,8 +52,13 @@ namespace coin
         EXPECT_EQ(q.time.tv_sec, 1680040722);
         EXPECT_EQ(q.time.tv_usec, 85703);
     }
-    
 
+    TEST_F(connect_exchange_test, parse_json_trade_id)
+    {
+        auto conn = connection_factory::connect_exchange(std::shared_ptr<i_http_handler>(new htto_handler_mock));
+        ticker q = conn->get_quote("BTC-USD");
+        EXPECT_EQ(q.trade_id, 514624546);
+    }
 }
 
 int main(int argc, char **argv)

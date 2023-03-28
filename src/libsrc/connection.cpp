@@ -39,6 +39,10 @@ namespace coin
 
         t.ask = stod(j["ask"]);
         t.bid = stod(j["bid"]);
+        t.volume = stod(j["volume"]);
+        t.trade_id = j["trade_id"];
+        t.price = stod(j["price"]);
+        //        uint64_t size; need to figure out way of scaling sizes
         t.time.tv_sec =  mktime (&ts);
         t.time.tv_usec = (int)(1000000*(seconds - ts.tm_sec));
         return t;
