@@ -9,20 +9,22 @@ namespace coin {
     struct ticker {
         uint64_t ask;
         uint64_t bid;
-        double volume;
-        int32_t trade_id;
-        double price;
-        double size;
+        uint64_t volume;
+        uint64_t trade_id;
+        uint64_t price;
+        uint64_t size;
         std::string time;
     };
 
+    // Abstract interface for http handler, actual type to be defined
+    // in connection_factory
     class i_http_handler {
         public:
         virtual std::string get(std::string addr) = 0;
     };
 
-    // Abstract interface for http handler, actual type to be defined
-    // in connection_factory
+    // constructor is hidden as private, meant to only be called from
+    // an appropriate factory class
     class connection {
         public:
         bool initialized();

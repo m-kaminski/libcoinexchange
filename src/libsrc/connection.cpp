@@ -15,19 +15,14 @@ namespace coin
                     ticker t;
         std::string text = http_handler->get(std::string("https://api.exchange.coinbase.com/products/") + prod + "/ticker");
         nlohmann::json j = nlohmann::json::parse(text);
-       // string xx = j["token"];
         
         auto stod = [] (std::string s) {
             auto point =  s.find_first_of('.');
             uint64_t result_whole;
             uint64_t result_decimal;
             
-            
             std::from_chars(s.data()+point+1, s.data()+s.size(), result_decimal);
-
-
             std::from_chars(s.data(), s.data()+point, result_whole);
-            
             return 10000*result_whole + result_decimal*100;
         };
         t.ask = stod(j["ask"]);
