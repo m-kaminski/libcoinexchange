@@ -27,19 +27,20 @@ namespace coin
         };
         tm ts = {0};
         std::string iso_time = j["time"];
-        int msec;
-	    sscanf(iso_time.c_str(), "%04d-%02d-%02dT%02d:%02d:%02d.%dZ",
+        double seconds;
+	    sscanf(iso_time.c_str(), "%04d-%02d-%02dT%02d:%02d:%lfdZ",
 	           &ts.tm_year, &ts.tm_mon, &ts.tm_mday,
-	           &ts.tm_hour, &ts.tm_min, &ts.tm_sec, &msec);
+	           &ts.tm_hour, &ts.tm_min,  &seconds);
 
+        ts.tm_sec = (int)seconds;
 	    ts.tm_mon  -= 1;
 	    ts.tm_year -= 1900;
 	    ts.tm_isdst =-1;
-        
+
         t.ask = stod(j["ask"]);
         t.bid = stod(j["bid"]);
-        t.time =  mktime (&ts);
-
+        t.time.tv_sec =  mktime (&ts);
+        t.time.tv_usec = (int)(1000000*(seconds - ts.tm_sec));
         return t;
     }
 

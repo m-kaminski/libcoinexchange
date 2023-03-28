@@ -48,7 +48,8 @@ namespace coin
         auto conn = connection_factory::connect_exchange(std::shared_ptr<i_http_handler>(new htto_handler_mock));
         ticker q = conn->get_quote("BTC-USD");
         // convert time to epoch: https://epochtimestamp.com/
-        EXPECT_EQ(q.time, 1680040722);
+        EXPECT_EQ(q.time.tv_sec, 1680040722);
+        EXPECT_EQ(q.time.tv_usec, 85703);
     }
     
 

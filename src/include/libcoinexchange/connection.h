@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include <time.h>
+        #include <sys/time.h>
 
 namespace coin {
 
@@ -14,7 +15,8 @@ namespace coin {
         uint64_t trade_id;
         uint64_t price;
         uint64_t size;
-        time_t time;
+        timeval time;
+
     };
 
     // Abstract interface for http handler, actual type to be defined
