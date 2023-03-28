@@ -7,8 +7,8 @@
 namespace coin {
 
     struct ticker {
-        std::string ask;
-        std::string bid;
+        uint64_t ask;
+        uint64_t bid;
         double volume;
         int32_t trade_id;
         double price;
@@ -16,13 +16,13 @@ namespace coin {
         std::string time;
     };
 
-    // Abstract interface for http handler, actual type to be defined
-    // in connection_factory
     class i_http_handler {
         public:
         virtual std::string get(std::string addr) = 0;
     };
 
+    // Abstract interface for http handler, actual type to be defined
+    // in connection_factory
     class connection {
         public:
         bool initialized();

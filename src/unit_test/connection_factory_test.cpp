@@ -39,7 +39,8 @@ namespace coin
     {
         auto conn = connection_factory::connect_exchange(std::shared_ptr<i_http_handler>(new htto_handler_mock));
         ticker q = conn->get_quote("BTC-USD");
-        EXPECT_EQ(q.bid, "21.38");
+        EXPECT_EQ(q.bid, 213800);
+        EXPECT_EQ(q.ask, 213700);
     }
     
 
