@@ -18,8 +18,8 @@ namespace coin
     TEST_F(connect_exchange_test, connected_pairs)
     {
         auto conn = connection_factory::connect_exchange();
-        EXPECT_EQ(conn->get_product().size(),1);
-        EXPECT_EQ(conn->get_product()[0], "BTC-USD");
+        EXPECT_EQ(conn->get_products().size(),1);
+        EXPECT_EQ(conn->get_products()[0].id, "BTC-USD");
     }
     
     class htto_handler_mock : public i_http_handler

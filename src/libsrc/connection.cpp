@@ -48,9 +48,9 @@ namespace coin
         return t;
     }
 
-    std::vector<std::string> connection::get_product()
+    std::vector<product> connection::get_products()
     {
-        std::vector<std::string> result(1, "BTC-USD");
+        std::vector<product> result(1, {"BTC-USD","BTC","USD",2,8});
         return result;
     }
 }

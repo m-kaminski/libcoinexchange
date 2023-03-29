@@ -19,6 +19,14 @@ namespace coin {
 
     };
 
+    struct product {
+        std::string id;
+        std::string base_currency;
+        std::string quote_currency;
+        int quote_increment; // number of decimal places
+        int base_increment; // number of decimal places
+    };
+
     // Abstract interface for http handler, actual type to be defined
     // in connection_factory
     class i_http_handler {
@@ -31,7 +39,7 @@ namespace coin {
     class connection {
         public:
         bool initialized();
-        std::vector<std::string> get_product();
+        std::vector<product> get_products();
         ticker get_quote(const std::string & prod);
         private:
         connection(std::shared_ptr<i_http_handler> _http_handler)

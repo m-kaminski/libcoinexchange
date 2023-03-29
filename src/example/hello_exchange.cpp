@@ -6,8 +6,11 @@ int main() {
     auto conn = coin::connection_factory::connect_exchange();
     if (conn->initialized()) {
         std::cout << "Hello exchange\ntrading pairs:" << std::endl;
-        auto p = conn->get_product();
-        std::copy(p.begin(), p.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
+        auto pv = conn->get_products();
+
+        for (auto & p : pv) {
+            std::cout << p.id << std::endl;
+        }
         auto q = conn->get_quote("BTC-USD");
         std::cout << "BID/ASK" << q.bid << "/" << q.ask << std::endl;
     }
