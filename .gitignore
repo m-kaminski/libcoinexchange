@@ -3,4 +3,4 @@ build
 *~
 sample*
 apikey
-*.json
+./*.json
